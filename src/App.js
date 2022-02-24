@@ -509,9 +509,9 @@ function App() {
 
   const playFirst = () => playDay(1)
   const playPrevious = () => playDay(day - 1)
-  const playRandom = () => playDay(Math.floor(Math.random() * (og_day-1)) + 1)
+  const playRandom = () => playDay(Math.floor(Math.random() * (wordle_answers.length-1)) + 1)
   const playNext = () => playDay(day + 1)
-  const playLast = () => playDay(og_day)
+  const playLast = () => playDay(wordle_answers.length)
 
   const playDay = (i) => {
     // console.log("PLAYING")
