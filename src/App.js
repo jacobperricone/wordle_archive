@@ -31,7 +31,7 @@ const getDayAnswer = (day_) => {
 // Set the day number of the puzzle to display and show it as the address bar query string
 
 const setDay = newDay => {
-  if (newDay < 1) return;
+  if (newDay < 1 || newDay > max_size) return;
   day = newDay;
   window.history.pushState({}, '', '?' + day);
 };
@@ -45,9 +45,9 @@ const getDay = (og_day) => {
     } else {
       url_day = parseInt(search.slice(1), 10);
     }
-    // if (url_day > og_day || url_day < 1) {
-    //   url_day = og_day
-    // }
+    if (url_day > max_size || url_day < 1) {
+      url_day = og_day
+    }
     return url_day
   }
   else {
